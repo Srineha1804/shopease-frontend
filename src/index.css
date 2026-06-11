@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0f0f0f;
+  --cream: #faf8f4;
+  --gold: #c9a84c;
+  --gold-light: #f0d98a;
+  --surface: #ffffff;
+  --muted: #6b6b6b;
+  --border: #e8e4dd;
+  --danger: #d94f4f;
+  --success: #2e9e6b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--cream);
+  color: var(--ink);
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+.gold-text { color: var(--gold); }
+.ink-surface { background: var(--ink); color: var(--cream); }
+
+/* Smooth page transitions */
+.page-enter {
+  animation: fadeUp 0.4s ease forwards;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Card hover lift */
+.card-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.10);
+}
+
+/* Gold button */
+.btn-gold {
+  background: var(--gold);
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-gold:hover {
+  background: #b8973f;
+  transform: scale(1.02);
+}
+
+/* Ink button */
+.btn-ink {
+  background: var(--ink);
+  color: var(--cream);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-ink:hover {
+  background: #2a2a2a;
+  transform: scale(1.02);
+}
+
+/* Status pills */
+.pill-pending   { background:#fff8e6; color:#b7820a; border:1px solid #f5d97a; }
+.pill-processing{ background:#e8f0ff; color:#2a5bd7; border:1px solid #b0c4f8; }
+.pill-shipped   { background:#ede8ff; color:#6a3fd4; border:1px solid #c4b3f7; }
+.pill-delivered { background:#e6f9f1; color:#1a7a4e; border:1px solid #7dd4ac; }
+.pill-cancelled { background:#fdeaea; color:#b03a3a; border:1px solid #f3a8a8; }
+
+/* Input style */
+.input-classy {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.input-classy:focus {
+  border-color: var(--gold);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: #d4cfc7; border-radius: 10px; }
