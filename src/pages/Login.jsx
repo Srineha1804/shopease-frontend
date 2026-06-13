@@ -18,6 +18,7 @@ export default function Login() {
       login(res.data)
       toast.success('Welcome back, ' + res.data.name + '!')
       if (res.data.role === 'ROLE_SELLER') navigate('/seller')
+      else if (res.data.role === 'ROLE_ADMIN') navigate('/admin')
       else navigate('/')
     } catch (err) {
       toast.error('Invalid email or password!')
